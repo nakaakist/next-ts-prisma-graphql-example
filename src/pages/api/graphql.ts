@@ -5,7 +5,10 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { NextApiRequest, NextApiResponse } from "next";
 import NextCors from "nextjs-cors";
 
-const server = new ApolloServer({ typeDefs: schema, resolvers });
+const server = new ApolloServer({
+  typeDefs: schema,
+  resolvers,
+});
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (process.env.NODE_ENV === "development") {
