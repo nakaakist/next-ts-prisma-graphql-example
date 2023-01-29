@@ -13,8 +13,10 @@
     "gen-gql:watch": "graphql-codegen --watch"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.5",
     "@apollo/server": "^4.3.2",
     "@as-integrations/next": "^1.2.0",
+    "@graphql-typed-document-node/core": "^3.1.1",
     "@next/font": "13.1.6",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
