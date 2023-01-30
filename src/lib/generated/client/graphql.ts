@@ -16,7 +16,9 @@ export type Scalars = {
 
 export type Post = {
   __typename?: 'Post';
+  content: Scalars['String'];
   id: Scalars['Int'];
+  likes: Scalars['Int'];
   title: Scalars['String'];
   topics: Array<Topic>;
 };

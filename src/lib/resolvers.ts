@@ -6,6 +6,8 @@ export const resolvers = {
       {
         id: 1,
         title: "test post",
+        content: "test content",
+        likes: 0,
         topics: [{ id: 1, name: "test topic" }],
       },
     ],

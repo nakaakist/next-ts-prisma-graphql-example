@@ -9,6 +9,8 @@ const schema = buildSchema(/* GraphQL */ `
   type Post {
     id: Int!
     title: String!
+    content: String!
+    likes: Int!
     topics: [Topic!]!
   }
 

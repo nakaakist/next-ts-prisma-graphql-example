@@ -15,7 +15,9 @@ export type Scalars = {
 
 export type Post = {
   __typename?: 'Post';
+  content: Scalars['String'];
   id: Scalars['Int'];
+  likes: Scalars['Int'];
   title: Scalars['String'];
   topics: Array<Topic>;
 };
@@ -120,7 +122,9 @@ export type ResolversParentTypes = ResolversObject<{
 }>;
 
 export type PostResolvers<ContextType = any, ParentType extends ResolversParentTypes['Post'] = ResolversParentTypes['Post']> = ResolversObject<{
+  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  likes?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   topics?: Resolver<Array<ResolversTypes['Topic']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
