@@ -1,6 +1,6 @@
-import { graphql } from "@/lib/generated/client";
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
+import { graphql } from "@/lib/generated/client";
 
 const postsDocument = graphql(/* GraphQL */ `
   query posts {

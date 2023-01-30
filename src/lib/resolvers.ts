@@ -1,3 +1,5 @@
+import { Resolvers } from "./generated/server/resolversTypes";
+
 export const resolvers = {
   Query: {
     posts: () => [
@@ -8,4 +10,4 @@ export const resolvers = {
       },
     ],
   },
-}; // satisfies Resolvers;
+} satisfies Resolvers;

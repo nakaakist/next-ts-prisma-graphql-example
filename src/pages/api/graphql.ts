@@ -1,9 +1,9 @@
-import { resolvers } from "@/lib/resolvers";
-import schema from "@/lib/schema";
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { NextApiRequest, NextApiResponse } from "next";
 import NextCors from "nextjs-cors";
+import schema from "@/lib/schema";
+import { resolvers } from "@/lib/resolvers";
 
 const server = new ApolloServer({
   typeDefs: schema,
