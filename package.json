@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "run-p dev:server dev:db gen-gql:watch",
     "dev:server": "next dev",
+    "setup:db": "prisma migrate dev && prisma db seed",
     "dev:db": "docker-compose up -d",
     "dev:db:stop": "docker-compose down",
     "build": "next build",
@@ -35,12 +36,17 @@
   },
   "packageManager": "pnpm@7.26.2",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@graphql-codegen/cli": "^2.16.4",
     "@graphql-codegen/client-preset": "^1.2.6",
     "@graphql-codegen/typescript-resolvers": "^2.7.12",
     "eslint-config-prettier": "^8.6.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.3",
-    "prisma": "^4.9.0"
+    "prisma": "^4.9.0",
+    "ts-node": "^10.9.1"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} --transpile-only prisma/seed.ts"
   }
 }

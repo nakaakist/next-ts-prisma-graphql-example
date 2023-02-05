@@ -1,4 +1,5 @@
 import { Resolvers } from "./generated/server/resolversTypes";
+import prisma from "./prisma";
 
 export const resolvers = {
   Query: {
