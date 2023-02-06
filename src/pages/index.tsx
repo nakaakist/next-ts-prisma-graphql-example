@@ -1,12 +1,14 @@
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import { graphql } from "@/generated/client";
+import { PostSummary } from "@/components/PostSummary";
 
 const postsDocument = graphql(/* GraphQL */ `
   query posts {
     posts {
       id
       title
+      likes
       topics {
         id
         name
@@ -24,7 +26,9 @@ export default function Home() {
         <title>Next TS Prisma GraphQL example</title>
       </Head>
       <main>
-        <pre>{JSON.stringify(data)}</pre>
+        {data?.posts?.map((post) => (
+          <PostSummary key={post?.id} {...post} />
+        ))}
       </main>
     </>
   );
