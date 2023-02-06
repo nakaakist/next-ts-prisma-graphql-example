@@ -7,7 +7,7 @@ export const resolvers = {
       return await prisma.post.findMany();
     },
     post: async (_, { id }) => {
-      return await prisma.post.findUnique({ where: { id: parseInt(id) } });
+      return await prisma.post.findUnique({ where: { id } });
     },
   },
   Post: {
