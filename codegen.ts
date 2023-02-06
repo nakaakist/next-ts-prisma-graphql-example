@@ -4,7 +4,7 @@ const config: CodegenConfig = {
   schema: "./src/lib/schema.ts",
   documents: ["src/**/*.tsx"],
   generates: {
-    "./src/lib/generated/server/resolversTypes.ts": {
+    "./src/generated/server/resolversTypes.ts": {
       config: {
         useIndexSignature: true,
         maybeValue: "T | undefined | null",
@@ -15,7 +15,7 @@ const config: CodegenConfig = {
       },
       plugins: ["typescript", "typescript-resolvers"],
     },
-    "./src/lib/generated/client/": {
+    "./src/generated/client/": {
       preset: "client",
       plugins: [],
     },
