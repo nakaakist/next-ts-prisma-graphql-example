@@ -1,6 +1,7 @@
 import { GraphQLResolveInfo } from 'graphql';
-export type Maybe<T> = T | null;
-export type InputMaybe<T> = Maybe<T>;
+import { Topic as TopicModel, Post as PostModel } from '@prisma/client';
+export type Maybe<T> = T | undefined | null;
+export type InputMaybe<T> = T | undefined | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -105,20 +106,20 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = ResolversObject<{
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
-  Post: ResolverTypeWrapper<Post>;
+  Post: ResolverTypeWrapper<PostModel>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  Topic: ResolverTypeWrapper<Topic>;
+  Topic: ResolverTypeWrapper<TopicModel>;
 }>;
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = ResolversObject<{
   Boolean: Scalars['Boolean'];
   Int: Scalars['Int'];
-  Post: Post;
+  Post: PostModel;
   Query: {};
   String: Scalars['String'];
-  Topic: Topic;
+  Topic: TopicModel;
 }>;
 
 export type PostResolvers<ContextType = any, ParentType extends ResolversParentTypes['Post'] = ResolversParentTypes['Post']> = ResolversObject<{

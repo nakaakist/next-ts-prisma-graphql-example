@@ -7,6 +7,11 @@ const config: CodegenConfig = {
     "./src/lib/generated/server/resolversTypes.ts": {
       config: {
         useIndexSignature: true,
+        maybeValue: "T | undefined | null",
+        mappers: {
+          Topic: "@prisma/client#Topic as TopicModel",
+          Post: "@prisma/client#Post as PostModel",
+        },
       },
       plugins: ["typescript", "typescript-resolvers"],
     },
