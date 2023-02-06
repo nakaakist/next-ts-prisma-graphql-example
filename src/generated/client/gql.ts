@@ -14,6 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  query posts {\n    posts {\n      id\n      title\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n": types.PostsDocument,
+    "\n  query post($id: Int!) {\n    post(id: $id) {\n      id\n      title\n      content\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n": types.PostDocument,
 };
 
 /**
@@ -34,6 +35,10 @@ export function graphql(source: string): unknown;
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  query posts {\n    posts {\n      id\n      title\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n"): (typeof documents)["\n  query posts {\n    posts {\n      id\n      title\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query post($id: Int!) {\n    post(id: $id) {\n      id\n      title\n      content\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n"): (typeof documents)["\n  query post($id: Int!) {\n    post(id: $id) {\n      id\n      title\n      content\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

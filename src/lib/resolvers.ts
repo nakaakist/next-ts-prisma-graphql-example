@@ -6,6 +6,9 @@ export const resolvers = {
     posts: async () => {
       return await prisma.post.findMany();
     },
+    post: async (_, { id }) => {
+      return await prisma.post.findUnique({ where: { id: parseInt(id) } });
+    },
   },
   Post: {
     topics: async (parent) => {

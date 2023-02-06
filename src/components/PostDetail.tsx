@@ -1,13 +1,10 @@
-import Link from "next/link";
 import { Post } from "@/generated/client/graphql";
 
-export const PostSummary = (props: Omit<Post, "content">) => {
-  const linkToDetail = `/posts/${props.id}`;
+export const PostDetail = (props: Post) => {
   return (
     <div>
-      <Link href={linkToDetail}>
-        <h2>{props.title}</h2>
-      </Link>
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
       <ul>
         {props.topics.map((topic) => (
           <li key={topic.id}>{topic.name}</li>
