@@ -15,7 +15,7 @@ const schema = buildSchema(/* GraphQL */ `
   }
 
   type Query {
-    posts: [Post]
+    posts: [Post!]!
   }
 `);
 
