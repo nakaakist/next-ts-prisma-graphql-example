@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { graphql } from "@/generated/client";
 import { PostDetail } from "@/components/PostDetail";
+import { Layout } from "@/components/Layout";
 
 const postDocument = graphql(/* GraphQL */ `
   query post($id: Int!) {
@@ -31,7 +32,9 @@ export default function Home() {
       <Head>
         <title>Next TS Prisma GraphQL example</title>
       </Head>
-      <main>{data && data.post && <PostDetail {...data.post} />}</main>
+      <Layout>
+        <main>{data && data.post && <PostDetail {...data.post} />}</main>
+      </Layout>
     </>
   );
 }
