@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { TopicTag } from "./Topic";
+import { TopicTag } from "./TopicTag";
 import { Post } from "@/generated/client/graphql";
 
 export const PostDetail = (props: Post) => {
