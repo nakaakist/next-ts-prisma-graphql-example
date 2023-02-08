@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
+    "\n  mutation likePost($id: Int!) {\n    likePost(id: $id) {\n      post {\n        id\n        likes\n      }\n    }\n  }\n": types.LikePostDocument,
     "\n  query posts {\n    posts {\n      id\n      title\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n": types.PostsDocument,
     "\n  query post($id: Int!) {\n    post(id: $id) {\n      id\n      title\n      content\n      likes\n      topics {\n        id\n        name\n      }\n    }\n  }\n": types.PostDocument,
 };
@@ -31,6 +32,10 @@ const documents = {
  */
 export function graphql(source: string): unknown;
 
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  mutation likePost($id: Int!) {\n    likePost(id: $id) {\n      post {\n        id\n        likes\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation likePost($id: Int!) {\n    likePost(id: $id) {\n      post {\n        id\n        likes\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

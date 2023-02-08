@@ -10,6 +10,22 @@ export const resolvers = {
       return await prisma.post.findUnique({ where: { id } });
     },
   },
+  Mutation: {
+    likePost: async (_, { id }) => {
+      const post = await prisma.post.update({
+        where: { id },
+        data: {
+          likes: {
+            increment: 1,
+          },
+        },
+      });
+
+      return {
+        post,
+      };
+    },
+  },
   Post: {
     topics: async (parent) => {
       return (

@@ -1,6 +1,19 @@
 import { buildSchema } from "graphql";
 
 const schema = buildSchema(/* GraphQL */ `
+  type Query {
+    posts: [Post!]!
+    post(id: Int!): Post
+  }
+
+  type Mutation {
+    likePost(id: Int!): LikePostResponse!
+  }
+
+  type LikePostResponse {
+    post: Post
+  }
+
   type Topic {
     id: Int!
     name: String!
@@ -12,11 +25,6 @@ const schema = buildSchema(/* GraphQL */ `
     content: String!
     likes: Int!
     topics: [Topic!]!
-  }
-
-  type Query {
-    posts: [Post!]!
-    post(id: Int!): Post
   }
 `);
 
