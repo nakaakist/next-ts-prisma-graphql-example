@@ -8,7 +8,7 @@ export const PostSummary = (props: Omit<Post, "content">) => {
   const linkToDetail = `/posts/${props.id}`;
   return (
     <Link href={linkToDetail}>
-      <div className="bg-white hover:bg-gray-100 px-2 py-5 flex flex-col gap-3 rounded">
+      <div className="bg-white transition hover:bg-gray-100 px-2 py-5 flex flex-col gap-3 rounded">
         <h2 className="text-heading text-2xl font-medium">{props.title}</h2>
 
         <div className="flex gap-4">
