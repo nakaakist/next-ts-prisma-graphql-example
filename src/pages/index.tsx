@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Next TS Prisma GraphQL example</title>
+        <title>Posts</title>
       </Head>
       <Layout>
         <div className="flex flex-col gap-5">

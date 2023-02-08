@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Next TS Prisma GraphQL example</title>
+        <title>{data?.post?.title}</title>
       </Head>
       <Layout>
         <main>{data && data.post && <PostDetail {...data.post} />}</main>
