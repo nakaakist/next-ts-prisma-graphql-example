@@ -4,7 +4,11 @@ import prisma from "./prisma";
 export const resolvers = {
   Query: {
     posts: async () => {
-      return await prisma.post.findMany();
+      return await prisma.post.findMany({
+        orderBy: {
+          id: "asc",
+        },
+      });
     },
     post: async (_, { id }) => {
       return await prisma.post.findUnique({ where: { id } });
@@ -35,7 +39,11 @@ export const resolvers = {
               id: parent.id,
             },
           })
-          .topics()) ?? []
+          .topics({
+            orderBy: {
+              id: "asc",
+            },
+          })) ?? []
       );
     },
   },
