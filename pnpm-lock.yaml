@@ -22,6 +22,7 @@ specifiers:
   eslint: 8.33.0
   eslint-config-next: 13.1.6
   eslint-config-prettier: ^8.6.0
+  eslint-plugin-unused-imports: ^2.0.0
   graphql: ^16.6.0
   next: 13.1.6
   nextjs-cors: ^2.1.2
@@ -65,6 +66,7 @@ devDependencies:
   '@graphql-codegen/typescript-resolvers': 2.7.12_graphql@16.6.0
   autoprefixer: 10.4.13_postcss@8.4.21
   eslint-config-prettier: 8.6.0_eslint@8.33.0
+  eslint-plugin-unused-imports: 2.0.0_eslint@8.33.0
   npm-run-all: 4.1.5
   postcss: 8.4.21
   prettier: 2.8.3
@@ -3315,6 +3317,25 @@ packages:
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
     dev: false
+
+  /eslint-plugin-unused-imports/2.0.0_eslint@8.33.0:
+    resolution: {integrity: sha512-3APeS/tQlTrFa167ThtP0Zm0vctjr4M44HMpeg1P4bK6wItarumq0Ma82xorMKdFsWpphQBlRPzw/pxiVELX1A==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+    dependencies:
+      eslint: 8.33.0
+      eslint-rule-composer: 0.3.0
+    dev: true
+
+  /eslint-rule-composer/0.3.0:
+    resolution: {integrity: sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==}
+    engines: {node: '>=4.0.0'}
+    dev: true
 
   /eslint-scope/7.1.1:
     resolution: {integrity: sha512-QKQM/UXpIiHcLqJ5AOyIW7XZmzjkzQXYE54n1++wb0u9V/abW3l9uQnxX8Z5Xd18xyKIMTUAyQ0k1e8pz6LUrw==}

@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { Inter } from "@next/font/google";
 import type { AppProps } from "next/app";
 
 const client = new ApolloClient({
