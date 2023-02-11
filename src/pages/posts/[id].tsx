@@ -1,9 +1,10 @@
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { graphql } from "@/generated/client";
-import { PostDetail } from "@/components/PostDetail";
 import { Layout } from "@/components/Layout";
+import { PostDetail } from "@/components/PostDetail";
+import { APP_TITLE } from "@/constants";
+import { graphql } from "@/generated/client";
 
 const postDocument = graphql(/* GraphQL */ `
   query post($id: Int!) {
@@ -30,7 +31,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{data?.post?.title}</title>
+        <title>
+          {data?.post?.title} | {APP_TITLE}
+        </title>
       </Head>
       <Layout>
         <main>{data && data.post && <PostDetail {...data.post} />}</main>

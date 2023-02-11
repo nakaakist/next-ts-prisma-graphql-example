@@ -1,8 +1,9 @@
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
-import { graphql } from "@/generated/client";
-import { PostSummary } from "@/components/PostSummary";
 import { Layout } from "@/components/Layout";
+import { PostSummary } from "@/components/PostSummary";
+import { APP_TITLE } from "@/constants";
+import { graphql } from "@/generated/client";
 
 const postsDocument = graphql(/* GraphQL */ `
   query posts {
@@ -24,7 +25,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Posts</title>
+        <title>Posts | {APP_TITLE}</title>
       </Head>
       <Layout>
         <div className="flex flex-col gap-5">
