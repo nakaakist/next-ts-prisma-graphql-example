@@ -1,5 +1,7 @@
 # Next.js + TypeScript + Prisma + GraphQL example
 
+[![test](https://github.com/nakaakist/next-ts-prisma-graphql-example/actions/workflows/test.yaml/badge.svg)](https://github.com/nakaakist/next-ts-prisma-graphql-example/actions/workflows/test.yaml)
+
 ## About
 
 This is an example implementation of a simple blog app using Next.js, TypeScript, Prisma, and GraphQL.
@@ -24,6 +26,19 @@ This is an example implementation of a simple blog app using Next.js, TypeScript
 ### UI
 
 - CSS framework: [Tailwind CSS](https://tailwindcss.com/)
+
+## Notes on the implementation
+
+### Data fetching
+
+In this example, the GraphQL server runs on the `/api/graphql` endpoint of Next.js, and the frontend uses client side rendering (CSR).
+
+If you want to use server side rendering (SSR), remove the `useQuery` hook in each page and add `getServerSideProps` function with the `query` method of Apollo Client to fetch data.
+
+If you want to use static site generation (SSG) or incremental static regeneration (ISR), add `getStaticProps` function as in the case of SSR.  
+However, in SSR/ISR, you cannot use the `/api/graphql` endpoint to serve the data because this endpoint is not available at build time. You have to run a separate GraphQL server outside of Next.js.
+
+Instructions for each rendering method can be found [here](https://www.apollographql.com/blog/apollo-client/next-js/next-js-getting-started/), for example.
 
 ## Run locally
 
