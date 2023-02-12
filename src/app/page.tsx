@@ -3,6 +3,7 @@
 import { useQuery } from "@apollo/client";
 import { PostSummary } from "@/components/PostSummary";
 import { graphql } from "@/generated/client";
+import { Spinner } from "@/components/Spinner";
 
 const postsDocument = graphql(/* GraphQL */ `
   query posts {
@@ -19,7 +20,15 @@ const postsDocument = graphql(/* GraphQL */ `
 `);
 
 const Home = () => {
-  const { data, error } = useQuery(postsDocument);
+  const { data, loading } = useQuery(postsDocument);
+
+  if (loading) {
+    return (
+      <div className="h-60 flex items-center justify-center">
+        <Spinner />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-5">

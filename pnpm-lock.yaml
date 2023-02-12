@@ -19,6 +19,7 @@ specifiers:
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.10
   autoprefixer: ^10.4.13
+  classnames: ^2.3.2
   eslint: 8.33.0
   eslint-config-next: 13.1.6
   eslint-config-prettier: ^8.6.0
@@ -65,6 +66,7 @@ devDependencies:
   '@graphql-codegen/client-preset': 1.2.6_graphql@16.6.0
   '@graphql-codegen/typescript-resolvers': 2.7.12_graphql@16.6.0
   autoprefixer: 10.4.13_postcss@8.4.21
+  classnames: 2.3.2
   eslint-config-prettier: 8.6.0_eslint@8.33.0
   eslint-plugin-unused-imports: 2.0.0_eslint@8.33.0
   npm-run-all: 4.1.5
@@ -2610,6 +2612,10 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: true
 
   /clean-stack/2.2.0:
