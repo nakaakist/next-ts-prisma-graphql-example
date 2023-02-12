@@ -33,12 +33,13 @@ This is an example implementation of a simple blog app using Next.js, TypeScript
 
 In this example, the GraphQL server runs on the `/api/graphql` endpoint of Next.js, and the frontend uses client side rendering (CSR).
 
-If you want to use server side rendering (SSR), remove the `useQuery` hook in each page and add `getServerSideProps` function with the `query` method of Apollo Client to fetch data.
+If you want to use server side rendering (SSR), check [this discussion](https://github.com/apollographql/apollo-client/issues/10344).
 
-If you want to use static site generation (SSG) or incremental static regeneration (ISR), add `getStaticProps` function as in the case of SSR.  
-However, in SSR/ISR, you cannot use the `/api/graphql` endpoint to serve the data because this endpoint is not available at build time. You have to run a separate GraphQL server outside of Next.js.
+### App directory vs pages directory
 
-Instructions for each rendering method can be found [here](https://www.apollographql.com/blog/apollo-client/next-js/next-js-getting-started/), for example.
+This example uses the ["app directory"](https://beta.nextjs.org/docs/routing/fundamentals) system of Next.js.
+
+For the "pages directory" system, implementation guide can be found [here](https://www.apollographql.com/blog/apollo-client/next-js/next-js-getting-started/), for example.
 
 ## Run locally
 
